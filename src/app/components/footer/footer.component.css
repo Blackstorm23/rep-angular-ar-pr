@@ -1,0 +1,10 @@
+i.fa-brands.fa-youtube:hover{
+    color:#ff0000;
+}
+
+/* Para la vista de celular */
+@media (max-width: 575px){
+    .celular{
+     flex-direction: column;
+    }
+    }

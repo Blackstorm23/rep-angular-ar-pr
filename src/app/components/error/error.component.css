@@ -1,0 +1,175 @@
+     /* 2. CONTENT */
+/***********************************/
+/* 2.1. Section error */
+.error {
+  min-height: 100vh;
+  /* position: relative; */
+  padding: 140px 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  /* margin-top: 70px; */
+}
+
+.error__message {
+  text-align: center;
+  color: #fff;
+}
+
+.message__text {
+  line-height: 42px;
+  font-size: 18px;
+  padding: 0 60px;
+  max-width: 680px;
+  margin: auto;
+}
+
+.error__nav {
+  max-width: 600px;
+  margin: 40px auto 0;
+  text-align: center;
+}
+
+.e-nav__link {
+  height: 45px;
+  line-height: 45px;
+  width: 170px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 15px;
+  border: 1px solid #fff;
+  color: #fff ;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: .1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.e-nav__link:before {
+  content: '';
+  height: 200px;
+  background: #ffffff;;
+  position: absolute;
+  top: 70px;
+  right: 70px;
+  width: 260px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  -webkit-transform: rotate(50deg);
+          transform: rotate(50deg);
+}
+
+.e-nav__link:after {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  z-index: 999;
+  position: relative;
+}
+
+.e-nav__link:after {
+  content: "Volver a Inicio";
+}
+
+.e-nav__link:hover:before {
+  top: -60px;
+  right: -50px;
+}
+
+.e-nav__link:hover {
+  color: #009ba0;
+  font-size: medium;  
+}
+
+.e-nav__link:nth-child(2):hover:after {
+  color: #fff;
+}
+
+.neon{
+  letter-spacing: 5px;
+  text-shadow: 0 0 5px #00f7ff,
+  0 0 25px #00f7ff, 0 0 50px #00f7ff,
+  0 0 100px #00f7ff;
+  transition: 1s;
+}
+
+/* 2.1. END Section Error */
+      /* 2. END CONTENT */
+/***********************************/
+
+/***********************************
+      /* 3. RESPONSIVE */
+/***********************************/
+.error {
+  overflow: hidden;
+  max-height: 100vh;
+}
+@media (max-width: 1400px) { 
+  .error__content {
+    top: 55%;
+  }
+  .message__title {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 900px) {
+  .message__title {
+    font-size: 34px;
+  }
+  .error__content {
+    top: 55%;
+  }
+  }
+@media (max-width: 950px) {
+}
+@media (max-width: 750px) {
+  .error__content {
+    position: static;
+    margin: 0 auto;
+    transform: none;
+    padding-top: 300px;
+  }
+  .error {
+    padding-top: 0;
+    padding-bottom: 100px;
+    height: 100vh;
+  }
+  }
+@media (max-width: 650px) {
+  .message__title {
+    font-size: 36px;
+    padding-bottom: 20px;
+  }
+  .message__text {
+    font-size: 16px;
+    line-height: 2;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .error__content {
+    padding-top: 180px;
+  }
+  }
+@media (max-width: 480px) {
+
+  .message__title {
+    font-size: 30px;
+  }
+  .message__text {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+  }
+  /* .error__nav {
+    margin-top: 20px;
+  } */
+}
+
+.seccion{
+  position: static;
+}
+.negro{
+    background-color: #000;
+}

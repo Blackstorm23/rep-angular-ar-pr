@@ -1,0 +1,13 @@
+.center{
+    text-align: center;
+}
+.neon{
+    color: #00ccff;
+    text-shadow: 0 0 5px #00f7ff,
+    0 0 25px #00f7ff, 0 0 50px #00f7ff,
+    0 0 100px #00f7ff;
+}
+.neon:hover{
+    letter-spacing: 3px;
+    transition: 1s;
+  }

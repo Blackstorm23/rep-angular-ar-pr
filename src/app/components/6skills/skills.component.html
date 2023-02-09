@@ -1,0 +1,40 @@
+<section id="skills" class="skills borde mt-3 fondo">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-1 mt-4">
+            <h2 style="color: #000000;">SKILLS</h2>
+        </div>
+        <div class="col-md-3 mt-4">
+          <a href="#top"><button type="button" class="btn btn-outline-dark"><i class="fa-solid fa-arrow-turn-up">
+          </i></button></a>
+        </div>
+        <div class="col-md-8 mt-4 esquinar">
+          <!-- Button trigger modal -->
+<button type="submit" class="editar" data-bs-toggle="modal" data-bs-target="#skillsModalAdd" title="Agregar" *ngIf="isLogged"><i class="fa-regular fa-square-plus fa-2xl"></i></button>
+</div>
+      </div>
+      <hr style="color: #000000;">
+      <br>
+      <div class="row" *ngFor="let skill of skills">
+        <div class="col-md-11">
+          <h5 class="skills__tech">{{skill.habilidad}}</h5>
+        </div>
+          <div class="col-md-1">
+          <!-- Button trigger modal -->
+          <button type="button" class="editar" data-bs-toggle="modal" data-bs-target="#editarskills" title="Agregar" *ngIf="isLogged"><i class="fa-solid fa-pencil" routerLink="/editSkills/{{skill.id}}"></i></button>
+          <button type="button" class="editar" title="Borrar" *ngIf="isLogged"><i class="fa-solid fa-trash" (click)="delete(skill.id)"></i></button>
+        </div>
+          <div class="col-md-12">
+            <div class="progress animated fadeInUp">
+              <div class="progress-bar-hard progress-colorH progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped example"
+                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" [style.width.%]="skill.porcentaje" style="min-width:0%">{{skill.porcentaje}}%
+              </div>
+            </div>
+      </div>
+      <br>
+      <br>
+    </div>
+  <br>
+</div>
+</section>
+<app-skills-add></app-skills-add>

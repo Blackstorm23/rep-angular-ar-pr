@@ -1,0 +1,35 @@
+<section id="experiencia" class="experiencia borde fondo">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-1 mt-4"><h2 style="color: #000000;">EXPERIENCIA
+        </h2>
+        </div>
+        <div class="col-md-5 mt-4">
+          <a href="#top"><button type="button" class="btn btn-outline-dark"><i class="fa-solid fa-arrow-turn-up">
+          </i></button></a>
+        </div>
+        <div class="col-md-6 mt-4 esquinar">
+                        <!-- Button trigger modal -->
+        <button type="button" *ngIf="isLogged" class="editar" data-bs-toggle="modal" data-bs-target="#experienciaModalAdd" title="Agregar"><i class="fa-regular fa-square-plus fa-2xl"></i></button>
+            </div>
+            </div>
+  <hr style="color: #000000;">
+  <br>
+  <div class="row" *ngFor="let experiencia of experiencia">
+  <div class="col-md-3">
+    <img [src]="experiencia.logo">
+    <h5 style="color: #000000;">{{experiencia.puesto}}</h5>
+    <h6 style="color: #000000;">{{experiencia.inicio}} {{experiencia.fin}}</h6>
+  </div>
+  <div class="col-md-8">
+    <h5 style="color: #000000;">{{experiencia.descripcion}}</h5>
+  </div>
+  <div class="col-md-1">
+              <!-- Button trigger modal-->
+<button type="button" *ngIf="isLogged" class="editar" data-bs-toggle="modal" data-bs-target="#editarexperiencia" title="Editar"><i class="fa-solid fa-pencil" routerLink="/editExperiencia/{{experiencia.id}}"></i></button>
+<button type="button" *ngIf="isLogged" class="editar"><i class="fa-solid fa-trash" (click)="delete(experiencia.id)"></i></button>
+  </div>
+  </div>
+</div>
+  </section> 
+  <app-experiencia-add></app-experiencia-add>

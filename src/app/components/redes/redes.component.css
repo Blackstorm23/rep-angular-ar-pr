@@ -1,0 +1,38 @@
+i.fa-brands.fa-instagram.fa-2xl:hover{
+    color: #ff00d4;
+    }
+    i.fa-brands.fa-linkedin.fa-2xl:hover{
+        color:#0044ff;
+    }
+    i.fa-brands.fa-youtube.fa-2xl:hover{
+        color:#ff0000;
+    }
+    i.fa-solid.fa-user-lock.fa-2xl:hover{
+        color:#8a8a8a;
+    }
+    i.fa-solid.fa-user.fa-2xl:hover{
+        color:#33ff00;
+    }
+    i.fa-brands.fa-github.fa-2xl:hover{
+        color: #ffffff;
+    }
+    i.fa-brands.fa-github.fa-2xl{
+    color: #009ba0;
+    }
+    i.fa-brands.fa-linkedin.fa-2xl, i.fa-brands.fa-youtube.fa-2xl,
+    i.fa-brands.fa-instagram.fa-2xl, i.fa-solid.fa-user.fa-2xl {
+    color: #fff;
+    }
+    .list-group{
+        --bs-list-group-bg: transparent;
+        --bs-list-group-border-color: transparent;
+    }
+    
+    /* Para celular */
+    @media (max-width: 575px){
+        .celular{
+            display: flex;
+            flex-direction: column;
+            align-items: center;  
+            }
+    }

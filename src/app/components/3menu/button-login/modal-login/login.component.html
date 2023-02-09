@@ -1,0 +1,53 @@
+<!-- MODAL -->
+<section id="login">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="row">
+           <h1 class="center" style="font-size: 2.3rem;">Login</h1>
+        </div>
+          <div class="esquinar" style="margin-top: -3.34rem; padding: 1rem;">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form #f="ngForm" (ngSubmit)="onLogin()" novalidate [formGroup]="login">
+        <div class="modal-body">
+          <div class="mb-3 row">
+            <label for="staticEmail" class="center col-form-label neon">Usuario :</label>
+            <div class="col mt-1">
+              <input type="text" class="form-control form-control-lg" style="color: #000000; border-width: 3px;" name="nombreUsuario" placeholder="Nombre de Usuario" formControlName="nombreUsuario" 
+               [(ngModel)]="nombreUsuario" required for="nombreUsuario" [ngClass]="{'is-invalid': Nombre.errors && Nombre.touched, 'is-valid': !Nombre.errors && Nombre.touched}">
+              <div *ngIf="Nombre.errors && Nombre?.touched">    
+                <p *ngIf="Nombre.hasError('required')" class="text-danger">
+                  Se requiere el nombre de usuario.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="inputPassword" class="center col-form-label neon">Contraseña :</label>
+            <div class="col mt-1">
+              <input type="password" class="form-control form-control-lg" placeholder="Password" style="color: #000000; border-width: 3px;" id="password" name="password" formControlName="password"
+               [(ngModel)]="password" required for="password" [ngClass]="{'is-invalid': Password.errors && Password.touched, 'is-valid': !Password.errors && Password.touched}">
+               <div *ngIf="Password.errors && Password.touched">    
+                <p *ngIf="Password?.hasError('required')" class="text-danger">
+                  Se requiere la contraseña.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col center">
+          <button type="submit" class="btn btn-outline-dark neon1" style="color: #00ccff;" data-bs-dismiss="modal" id="login"><h5 class="mt-1">Iniciar Sesión</h5></button>
+        </div>
+      </form>
+        <br>
+              <div style="padding: 1rem;">
+          <a href="" class="small text-muted">Terminos de uso.</a> &nbsp;
+          <a href="" class="small text-muted">Politíca Privada,</a>
+        </div>
+    </div>
+  </div>
+</div>
+</section>
+<!--Esto era para cuando no tenía backend-->
+<!-- (ngSubmit)="onEnviar($event)" -->

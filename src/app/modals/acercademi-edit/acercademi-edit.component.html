@@ -1,0 +1,33 @@
+  <!--ACERCA DE MÍ-->
+  <!-- Modal -->
+  <form [formGroup]="form" (ngSubmit)="onEnviar($event)" name="perfilForm" class="bg-white rounded p-5 seccion"> 
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="staticBackdropLabel">Acerca de mí</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" routerLink="/"></button>
+        </div>
+        <div class="modal-body">
+                  <!-- formulario de perfil-->
+        <input type="hidden" formControlName="id" [ngModel]="perso.id">
+        <input type="hidden" formControlName="name" [ngModel]="perso.name">
+        <input type="hidden" formControlName="image" [ngModel]="perso.image">
+        <input type="hidden" formControlName="banner" [ngModel]="perso.banner">
+        <input type="hidden" formControlName="frase" [ngModel]="perso.frase">
+        <input type="hidden" formControlName="title" [ngModel]="perso.title">
+          <div class="mb-3">
+            <div class="col centrar">
+              <label for="descripcion" class="form-label"><h6>Descripción</h6></label>
+            </div>
+            <div class="row">
+            <input class="form-control" type="text" id="descripcion" formControlName="descripcion" placeholder="Descipción Nueva" [ngModel]="perso.descripcion" [ngClass]="{'is-invalid': Descrip.errors && Descrip.touched, 'is-valid': !Descrip.errors && Descrip.touched}">
+            <div *ngIf="Descrip.errors && Descrip.touched" class="invalid-feedback">
+              <div *ngIf="Descrip.errors['required']">La descripción es requerida.</div>
+            </div>
+          </div>
+          </div>
+      </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+      </div>
+  </form>

@@ -1,0 +1,35 @@
+<section id="proyectos" class="about2 borde1 mt-3">
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-md-1 mt-4">
+              <h2 class="fw-normal" style="color: #fff;">PROYECTOS</h2>
+            </div>
+            <div class="col-md-5 mt-4">
+              <a href="#top"><button type="button" class="btn btn-outline-info"><i class="fa-solid fa-arrow-turn-up">
+              </i></button></a>
+            </div>
+            <div class="col-md-6 mt-4 esquinar">
+              <!-- Button trigger modal -->
+<button type="button" class="editar" data-bs-toggle="modal" data-bs-target="#proyectoModalAdd" title="Agregar" *ngIf="isLogged"><i class="fa-regular fa-square-plus fa-2xl"></i></button>
+  </div>
+          </div>
+          <hr style="color: #fff;">
+          <br>
+          <div class="row" *ngFor="let proyecto of proyectos">
+            <div class="col-md-3">
+              <h4 style="color: #ffffff;" class="titulos">{{proyecto.nombreproyec}}</h4>
+              <h5 style="color: #ffffff;">{{proyecto.url}}</h5>
+              <h6 style="color: #ffffff;">{{proyecto.fecha}}</h6>
+            </div>
+            <div class="col-md-8">
+              <h5 style="color: #ffffff;">{{proyecto.descripcion}}</h5>
+            </div>
+            <div class="col-md-1">
+                        <!-- Button trigger modal -->
+        <button type="button" class="editar" data-bs-toggle="modal" data-bs-target="#editarproyectos" title="Editar" *ngIf="isLogged"><i class="fa-solid fa-pencil" routerLink="editProyectos/{{proyecto.id}}"></i></button>
+        <button class="editar" title="Borrar" *ngIf="isLogged"><i class="fa-solid fa-trash" (click)="delete(proyecto.id)"></i></button> 
+            </div>
+            </div>
+        </div>
+        </section>
+        <app-proyectos-add></app-proyectos-add>

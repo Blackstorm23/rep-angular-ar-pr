@@ -1,0 +1,51 @@
+<!-- Formulario Estudios -->
+<form  [formGroup]="editar" (ngSubmit)="onEnviar($event)" name="estudiosForm" class="bg-white rounded p-5 seccion"> 
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="estudiosModalEd">Editar Estudios</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" routerLink="/"></button>
+    </div>
+
+          <div class="modal-body">
+          <input type="hidden" formControlName="id" id="id" [ngModel]="estudios.id">
+            <div class="mb-3">
+              <label for="logo" class="form-label">Editar Logo</label>
+              <input class="form-control" type="url" id="logoest" formControlName="logo" [ngModel]="estudios.logo" >
+            </div>
+            <div class="mb-3">
+              <label for="nombreInstituto" class="form-label">Editar Nombre del Instituto</label>
+              <input type="text" class="form-control" id="nombreInstituto" formControlName="nombreInstituto" [ngModel]="estudios.nombreInstituto" rows="3" placeholder="Nombre nuevo" [ngClass]="{'is-invalid': Nombre.errors && Nombre.touched, 'is-valid': !Nombre.errors && Nombre.touched}">
+              <div *ngIf="Nombre.errors && Nombre.touched">    
+                <p *ngIf="Nombre.hasError('required')" class="text-danger">
+                  El nombre del instituto es requerido.
+                </p>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="titulo" class="form-label">Editar Titulo</label>
+              <input type="text" class="form-control" id="titulo" formControlName="titulo" [ngModel]="estudios.titulo" [ngClass]="{'is-invalid': Titulo.errors && Titulo.touched, 'is-valid': !Titulo.errors && Titulo.touched}">
+              <div *ngIf="Titulo.errors && Titulo.touched">    
+                <p *ngIf="Titulo.hasError('required')" class="text-danger">
+                  El título es requerido.
+                </p>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="inicio" class="form-label">Editar Periodo Inicio</label>
+              <input type="date" class="form-control" id="inicioest" formControlName="inicio" [ngModel]="estudios.inicio" [ngClass]="{'is-invalid': Inicio.errors && Inicio.touched, 'is-valid': !Inicio.errors && Inicio.touched}">
+              <div *ngIf="Inicio.errors && Inicio.touched">    
+                  <p *ngIf="Inicio.hasError('required')" class="text-danger">
+                    El periodo de inicio es requerido.
+                  </p>
+                </div>  
+            </div>
+            <div class="mb-3">
+              <label for="fin" class="form-label">Editar Periodo Fin</label>
+              <input type="date" class="form-control" id="finest" formControlName="fin" [ngModel]="estudios.fin"> 
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Guardar</button>          
+            </div>
+          </div>
+  </div>   
+    </form>

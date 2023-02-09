@@ -1,0 +1,29 @@
+/*SKILLS*/
+/*progressbar*/
+.progress{
+height: 15px;
+border-radius: 20px;
+font-size: 12px;
+font-weight: bold;
+text-align: right;
+align-items: center;
+background-color: #8d8d8d;
+}
+.habilidad .progress {
+    height: 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: right;
+    align-items: center;
+}
+.progress-colorH{
+    background-color: #009ba0;
+}
+
+/* Para la vista de celular */
+@media (max-width: 575px){
+    .celular{
+     flex-direction: column;
+    }
+    }

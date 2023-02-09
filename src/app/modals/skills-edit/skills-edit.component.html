@@ -1,0 +1,39 @@
+<!--AGREGAR SKILLS-->
+<!-- Modal -->
+<form  [formGroup]="form" (ngSubmit)="onEnviar($event)" name="skillsForm" class="bg-white rounded p-5 seccion"> 
+  <div class="modal-content">
+  <div class="modal-header">
+    <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar Skills</h1>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" routerLink="/"></button>
+  </div>
+            <!-- formulario de SKILLS-->
+            <div class="modal-body">
+              <input type="hidden" formControlName="id" id="id" [ngModel]="skills.id">
+              <div class="mb-3">
+                <label for="habilidad" class="form-label">Agregar Habilidad</label>
+                <input type="text" class="form-control" id="habilidad" name="habilidad"  placeholder="Ingrese habilidad" formControlName="habilidad" [ngModel]="skills.habilidad" [ngClass]="{'is-invalid': Habilidad.errors && Habilidad.touched, 'is-valid': !Habilidad.errors && Habilidad.touched}">
+                <div *ngIf="Habilidad.errors && Habilidad.touched" class="invalid-feedback">
+                  <div *ngIf="Habilidad.errors['required']">La habilidad es requerida</div>
+                </div>
+              </div>
+              <div class="mb-3">
+                  <label for="porcentaje" class="form-label">Agregar Porcentaje</label>
+                  <input type="number" min="0" max="100" class="form-control" id="porcentaje" name="porcentaje"  rows="3" formControlName="porcentaje" [ngModel]="skills.porcentaje" [ngClass]="{'is-invalid': Porcentaje.errors && Porcentaje.touched, 'is-valid': !Porcentaje.errors && Porcentaje.touched}">
+                  <div *ngIf="Porcentaje.errors && Porcentaje.touched">    
+                    <p *ngIf="Porcentaje.hasError('required')" class="text-danger">
+                      El porcentaje es requerido.
+                    </p>
+                    <p *ngIf="Porcentaje.hasError('min')" class="text-danger">
+                      El porcentaje mínimo es 0.
+                    </p>
+                    <p *ngIf="Porcentaje.hasError('max')" class="text-danger">
+                      El porcentaje máximo es 100.
+                    </p>
+                  </div>
+              </div>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Guardar</button>          
+              </div>
+  </div>
+</form>

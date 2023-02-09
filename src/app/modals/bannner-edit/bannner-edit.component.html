@@ -1,0 +1,33 @@
+<!--FOTO DEL BANNER-->
+<!-- Modal -->
+<form [formGroup]="form" (ngSubmit)="onEnviar($event)" name="bannerForm" class="bg-white rounded p-5 seccion"> 
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="staticBackdropLabel">Editar Banner</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" routerLink="/"></button>
+        </div>
+        <div class="modal-body">
+                            <!-- formulario de perfil-->
+        <input type="hidden" formControlName="id" [ngModel]="perso.id">
+        <input type="hidden" formControlName="image" [ngModel]="perso.image">
+        <input type="hidden" formControlName="descripcion" [ngModel]="perso.descripcion">
+        <input type="hidden" formControlName="name" [ngModel]="perso.name">
+        <input type="hidden" formControlName="title" [ngModel]="perso.title">
+        <input type="hidden" formControlName="frase" [ngModel]="perso.frase">
+          <div class="mb-3">
+            <div class="col centrar">
+              <label for="banner" class="form-label"><h6>Foto del banner</h6></label>
+            </div>
+            <div class="row">
+            <input class="form-control" type="url" id="banner" formControlName="banner" [ngModel]="perso.banner" [ngClass]="{'is-invalid': Banner.errors && Banner.touched, 'is-valid': !Banner.errors && Banner.touched}">
+            <div *ngIf="Banner.errors && Banner.touched" class="invalid-feedback">
+              <div *ngIf="Banner.errors['required']">El nombre es requerido</div>
+            </div>
+          </div>
+          </div>
+      </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+      </div>
+</form>

@@ -1,0 +1,36 @@
+<!--FOTO DE PERFIL-->
+<!-- Modal -->
+<form [formGroup]="form" (ngSubmit)="onEnviar($event)" name="perfilForm" class="bg-white rounded p-5 seccion"> 
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="editPerfil">Editar Foto Perfil</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" routerLink="/"></button>
+        </div>
+
+        <div class="modal-body">
+                            <!-- formulario de perfil-->
+        <input type="hidden" formControlName="id" [ngModel]="perso.id">
+        <input type="hidden" formControlName="name" [ngModel]="perso.name">
+        <input type="hidden" formControlName="descripcion" [ngModel]="perso.descripcion">
+        <input type="hidden" formControlName="banner" [ngModel]="perso.banner">
+        <input type="hidden" formControlName="frase" [ngModel]="perso.frase">
+        <input type="hidden" formControlName="title" [ngModel]="perso.title">
+          <div class="mb-3">
+            <div class="col centrar">
+              <label for="image" class="form-label"><h6>Foto de perfil</h6></label>
+            </div>
+            <div class="row">
+            <input class="form-control" type="url" id="image" formControlName="image" id="perfilImg" [ngModel]="perso.image" [ngClass]="{'is-invalid': Img.errors && Img.touched, 'is-valid': !Img.errors && Img.touched}">
+            <div *ngIf="Img.errors && Img.touched">    
+              <p *ngIf="Img.hasError('required')" class="text-danger">
+                El puesto es requerido.
+              </p>
+            </div>
+          </div>
+      </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+      </div>
+</form>

@@ -1,0 +1,49 @@
+<!-- Modal Proyecto -->
+<div class="modal fade" id="proyectoModalAdd" tabindex="-1" aria-labelledby="proyectoModalAdd" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="proyectoModalAdd">Agregar Proyecto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiar()"></button>
+        </div>
+        <form [formGroup]="form" (ngSubmit)="onEnviar($event)" name="experienciaFormAdd"> 
+            <!-- formulario de Proyecto-->
+        <div class="modal-body">
+                <div class="mb-3">
+                  <label for="nombreproyec" class="form-label">Agregar Nombre Del Proyecto</label>
+                  <input type="text" class="form-control" id="nombreproyec" name="nombreproyec"  placeholder="Nombre" formControlName="nombreproyec" [ngClass]="{'is-invalid': Name.errors && Name.touched, 'is-valid': !Name.errors && Name.touched}">
+                  <div *ngIf="Name.errors && Name.touched" class="invalid-feedback">
+                    <div *ngIf="Name.errors['required']">El nombre es requerido</div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="fecha" class="form-label">Agregar Fecha Del Proyecto</label>
+                  <input type="date" class="form-control" id="fecha" name="fecha"  formControlName="fecha" [ngClass]="{'is-invalid': Fecha.errors && Fecha.touched, 'is-valid': !Fecha.errors && Fecha.touched}">
+                  <div *ngIf="Fecha.errors && Fecha.touched">    
+                    <p *ngIf="Fecha.hasError('required')" class="text-danger">
+                      La fecha del proyecto es requerida.
+                    </p>
+                  </div>
+                </div>
+                <div class="mb-3">
+                    <label for="descripcionproyec" class="form-label">Agregar Descripcion Del Proyecto</label>
+                    <textarea class="form-control" id="descripcionproyec" name="descripcionproyec" rows="3" formControlName="descripcionproyec" [ngClass]="{'is-invalid': Descripcion.errors && Descripcion.touched, 'is-valid': !Descripcion.errors && Descripcion.touched}"></textarea>
+                    <div *ngIf="Descripcion.errors && Descripcion.touched">    
+                      <p *ngIf="Descripcion.hasError('required')" class="text-danger">
+                        La descripcion es requerida.
+                      </p>
+                    </div>
+                </div>
+                <div class="mb-3">
+                  <label for="url" class="form-label">Agregar Url Del Proyecto</label>
+                  <input class="form-control" type="url" id="url" name="url" formControlName="url" placeholder="Ingrese URL">
+                </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-dark" (click)="limpiar()">Limpiar</button>
+                  <button type="submit" class="btn btn-primary">Agregar</button>          
+                </div>
+            </form>
+      </div>
+    </div>
+  </div>

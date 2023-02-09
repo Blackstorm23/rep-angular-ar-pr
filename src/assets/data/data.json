@@ -1,0 +1,105 @@
+{
+		"banner": "assets/IMG/estudios.png",
+		"image": "assets/IMG/Perfil.jpg",
+		"name": "Lucas Vera",
+		"frase": "Sueña en grande",
+		"title": "Desarrollador Full Stack jr",
+		"descripcion": "Programador Web, diseñador gráfico, diseñador web, productor musical y audiovisual",
+
+	"experiencias": [
+		{
+		"id": 1,
+		"logoem": "d",
+		"puesto": "Puesto",
+		"inicio" : "xx-xx-xxxx",
+		"fin": "xx-xx-xxxx",
+		"descripcion": "Trabajo1"
+	},
+	{
+	"id": 2,
+	"logoem": "d",
+	"puesto": "Puesto2",
+	"inicio" : "xx-xx-xxxx",
+	"fin": "xx-xx-xxxx",
+	"descripcion": "Trabajo2"
+}
+	],
+
+	"estudios": [
+		{
+		"id": 1,
+		"logoins" : "./assets/IMG/logo.png",
+		"nombre": "Argentina Programa",
+		"titulo": "Desarrollador Web Full Stack jr.",
+		"inicio" : "22-06-2022",
+		"final" : "13-01-2022"
+	},
+	{
+		"id": 2,
+		"logoins" : "d",
+		"nombre": "Nombre del instituto2",
+		"titulo": "Título2",
+		"inicio" : "xx-xx-xxxx",
+		"final" : "xx-xx-xxxx"
+	}
+	],
+
+    "skills": [
+        {
+          "id": 1,
+          "nombre": "HTML",
+          "porcentaje": "95"
+        },
+        {
+            "id": 2,
+            "nombre": "CSS",
+            "porcentaje": "80"
+          },
+          {
+            "id": 3,
+            "nombre": "JAVA",
+            "porcentaje": "50"
+          },
+          {
+            "id": 4,
+            "nombre": "JavaScript",
+            "porcentaje": "40"
+          },
+          {
+            "id": 5,
+            "nombre": "Bootstrap",
+            "porcentaje": "80"
+          },
+          {
+              "id": 6,
+              "nombre": "Trabajo en Equipo",
+              "porcentaje": "90"
+            },
+            {
+              "id": 7,
+              "nombre": "Resolución de Problemas",
+              "porcentaje": "85"
+            },
+            {
+              "id": 8,
+              "nombre": "Manejo del tiempo",
+              "porcentaje": "95"
+            }
+      ],
+
+	"proyectos": [{
+		"id": 1,
+		"name": "Name",
+		"fecha": "xx-xx-xxxx",
+		"descripcion": "Descripción",
+		"url": "url"
+	},
+	{
+		"id": 2,
+		"name": "Name2",
+		"fecha": "xx-xx-xxxx",
+		"descripcion": "Descripción2",
+		"url": "url2"
+	}
+	]
+}

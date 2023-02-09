@@ -1,0 +1,10 @@
+.navbar.navbar-expand-lg.bg-primary {
+    background-color: #000000 !important;
+}
+
+/* Para la vista de celular */
+@media (max-width: 575px){
+.celular{
+ flex-direction: column;
+}
+}

@@ -1,0 +1,51 @@
+<section id="sobre mi" class="about">
+  <div class="seccion container-fluid rounded shadow-sm bg-body-transparent mb-3 mt-2">
+    <hr>
+    <div class="row centro">
+      <div class="col-md-12">
+    <a href="#experiencia"><button class="btn btn-outline-info">Experiencia</button></a>&nbsp;  
+    <a href="#estudios"><button class="btn btn-outline-info">Estudios</button></a>&nbsp; 
+    <a href="#skills"><button class="btn btn-outline-info">Skills</button></a>&nbsp; 
+    <a href="#proyectos"><button class="btn btn-outline-info">Proyectos</button></a>&nbsp; 
+    <a href="#footer"><button class="btn btn-outline-light">Contacto</button></a>&nbsp;
+  </div>
+  </div>  
+
+  <div class="center col-md-12 mt-2">
+  <img [src]="persona.banner" alt="banner" width="100%" height="auto" class="rounded-top banner" id="imgbanner">
+  <button type="button" data-bs-toggle="modal" data-bs-target="#bannerModal" *ngIf="isLogged" class="editBanner editProfile editar" title="Editar"><i class="fa-solid fa-pencil" routerLink="editBanner/{{persona.id}}"></i></button>
+</div>
+      <div class="row p-3">
+        <div class="col-md-3">
+          <div class="profilePicture">
+          <img [src]="persona.image" class="rounded-circle w-50 profileImagen image" alt="profilePicture" title="Perfil">
+        <div class="middle text">
+                <!-- Button trigger modal -->
+                  <button type="button" class="editar editProfile" data-bs-toggle="modal" *ngIf="isLogged" data-bs-target="#editarperfil" title="Editar"><h3><i class="fa-solid fa-pen-to-square" routerLink="editPerfil/{{persona.id}}"></i></h3></button>
+                </div>
+          </div>
+          <br>
+          <h4 style="color: #fff;">{{persona.name}}
+          </h4>
+            <h5 class="fw normal" style="color: #fff;">"{{persona.frase}}"</h5>
+            <div class="col centrar celular">
+            <h6 style="color: #fff;" class="mt-1">-{{persona.title}}</h6>
+           <!-- Button trigger modal -->
+             <button type="button" class="editar editProfile" data-bs-toggle="modal" *ngIf="isLogged" routerLink="editNombrefrase/{{persona.id}}" data-bs-target="#editarpicture" title="Editar">
+               <h5><i class="fa-solid fa-pen-to-square"></i></h5>
+             </button>
+           </div>
+        </div>
+        <div class="col-md-8 mt-3">
+          <h2 style="color: #ffffff;">ACERCA DE MÍ</h2>
+          <hr style="color: #ffffff;">
+          <h5 style="color: #ffffff;">{{persona.descripcion}}
+          </h5>
+        </div>
+        <div class="col-md-1 p-0 centrar">
+                    <!-- Button trigger modal -->
+<button type="button" class="editar" data-bs-toggle="modal" *ngIf="isLogged" routerLink="editAcercademi/{{persona.id}}" data-bs-target="#staticBackdrop2" title="Editar"><i class="fa-solid fa-pencil"></i></button>
+        </div>
+  </div>
+  </div>
+    </section>

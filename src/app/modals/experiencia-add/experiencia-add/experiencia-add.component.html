@@ -1,0 +1,53 @@
+<!-- Modal Experiencia -->
+<div class="modal fade" id="experienciaModalAdd" tabindex="-1" aria-labelledby="experienciaModalAdd" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="experienciaModalAdd">Agregar Experiencia</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiar()"></button>
+        </div>
+        <form [formGroup]="form" (ngSubmit)="onEnviar($event)" name="experienciaFormAdd">
+            <!-- formulario de experiencia-->
+        <div class="modal-body">
+                <div class="mb-3">
+                  <label for="logo" class="form-label">Agregar Logo de Empresa</label>
+                  <input class="form-control" type="url" id="logo" name="logo" formControlName="logo" placeholder="Ingrese URL del logo">
+                </div>
+                <div class="mb-3">
+                  <label for="puesto" class="form-label">Agregar Puesto</label>
+                  <input type="text" class="form-control" id="puesto" name="puesto"  placeholder="Ingrese cargo" formControlName="puesto" [ngClass]="{'is-invalid': Puesto.errors && Puesto.touched, 'is-valid': !Puesto.errors && Puesto.touched}">
+                  <div *ngIf="Puesto.errors && Puesto.touched" class="invalid-feedback">
+                    <div *ngIf="Puesto.errors['required']">El nombre es requerido</div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="inicio" class="form-label">Agregar Periodo Inicio</label>
+                  <input type="date" class="form-control" id="inicio" name="inicio"  formControlName="inicio" [ngClass]="{'is-invalid': Inicio.errors && Inicio.touched, 'is-valid': !Inicio.errors && Inicio.touched}">
+                  <div *ngIf="Inicio.errors && Inicio.touched">    
+                    <p *ngIf="Inicio.hasError('required')" class="text-danger">
+                      El Periodo Inicio es requerido.
+                    </p>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="fin" class="form-label">Agregar Periodo Fin</label>
+                  <input type="date" class="form-control" id="fin" name="fin" formControlName="fin"> 
+                </div>
+                <div class="mb-3">
+                    <label for="descripcion" class="form-label">Agregar Descripcion Del Puesto</label>
+                    <textarea class="form-control" id="descripcion" name="descripcion"  rows="3" formControlName="descripcion" [ngClass]="{'is-invalid': Descripcion.errors && Descripcion.touched, 'is-valid': !Descripcion.errors && Descripcion.touched}"></textarea>
+                    <div *ngIf="Descripcion.errors && Descripcion.touched">    
+                      <p *ngIf="Descripcion.hasError('required')" class="text-danger">
+                        La descripcion es requerida.
+                      </p>
+                    </div>
+                </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-dark" (click)="limpiar()">Limpiar</button>
+                  <button type="submit" class="btn btn-primary">Agregar</button>          
+                </div>
+            </form>
+      </div>
+    </div>
+  </div>

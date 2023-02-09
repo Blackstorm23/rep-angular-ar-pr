@@ -1,0 +1,11 @@
+<header>
+<nav class="navbar navbar-expand-lg bg-primary">
+    <div class="container-fluid celular">
+        <img src="./assets/IMG/logo.png" alt="" width="" height="">
+        <!--Icons-->
+        <app-redes></app-redes>
+        <app-button-login *ngIf="!isLogged"></app-button-login>
+        <app-button-loginout *ngIf="isLogged"></app-button-loginout>
+    </div>
+</nav>
+</header>

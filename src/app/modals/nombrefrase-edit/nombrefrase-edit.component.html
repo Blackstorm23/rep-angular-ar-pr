@@ -1,0 +1,53 @@
+  <!--NOMBRE Y FRASE-->
+  <!-- Modal -->
+  <form [formGroup]="form" (ngSubmit)="onEnviar($event)" name="perfilForm" class="bg-white rounded p-5 seccion"> 
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="staticBackdropLabel">Editar Perfil</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" routerLink="/"></button>
+        </div>
+        <div class="modal-body">
+        <!-- formulario de perfil-->
+        <input type="hidden" formControlName="id" [ngModel]="perso.id">
+        <input type="hidden" formControlName="image" [ngModel]="perso.image">
+        <input type="hidden" formControlName="descripcion" [ngModel]="perso.descripcion">
+        <input type="hidden" formControlName="banner" [ngModel]="perso.banner">
+          <div class="mb-3">
+            <div class="col centrar">
+              <label for="name" class="form-label"><h6>Nombre y Apellido</h6></label>
+            </div>
+            <div class="row">
+              <input type="text" class="form-control" id="name" formControlName="name" placeholder="Nombre nuevo" [ngModel]="perso.name" [ngClass]="{'is-invalid': Nombre.errors && Nombre.touched, 'is-valid': !Nombre.errors && Nombre.touched}">
+              <div *ngIf="Nombre.errors && Nombre.touched" class="invalid-feedback">
+                <div *ngIf="Nombre.errors['required']">El nombre es requerido</div>
+              </div>
+            </div>
+          </div>
+        <div class="mb-3">
+          <div class="col centrar">
+            <label for="frase" class="form-label"><h6>Frase</h6></label>
+          </div>
+          <div class="row">
+            <input type="text" class="form-control" id="frase" formControlName="frase" placeholder="Frase nueva" [ngModel]="perso.frase" [ngClass]="{'is-invalid': Frase.errors && Frase.touched, 'is-valid': !Frase.errors && Frase.touched}">
+            <div *ngIf="Frase.errors && Frase.touched" class="invalid-feedback">
+              <div *ngIf="Frase.errors['required']">La frase es requerida</div>
+            </div>
+          </div>
+      </div>
+      <div class="mb-3">
+        <div class="col centrar">
+          <label for="title" class="form-label"><h6>Título</h6></label>
+        </div>
+        <div class="row">
+          <input type="text" class="form-control" id="title" formControlName="title" placeholder="Titulo" [ngModel]="perso.title" [ngClass]="{'is-invalid': Titulo.errors && Titulo.touched, 'is-valid': !Titulo.errors && Titulo.touched}">
+          <div *ngIf="Titulo.errors && Titulo.touched" class="invalid-feedback">
+            <div *ngIf="Titulo.errors['required']">La frase es requerida</div>
+          </div>
+        </div>
+    </div>
+    </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+  </div>
+</form>
