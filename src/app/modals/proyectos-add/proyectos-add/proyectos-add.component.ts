@@ -16,7 +16,7 @@ export class ProyectosAddComponent implements OnInit {
       url:[''],
       fecha:['',[Validators.required]],
       nombreproyec:['',[Validators.required]],
-      descripcionproyec:['',[Validators.required]],
+      descripcion:['',[Validators.required]],
    })
    }
 
@@ -32,7 +32,7 @@ export class ProyectosAddComponent implements OnInit {
   }
 
   get Descripcion(){
-    return this.form.get("descripcionproyec");
+    return this.form.get("descripcion");
   }
  
   onCreate(): void{

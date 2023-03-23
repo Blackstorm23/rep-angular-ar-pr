@@ -26,8 +26,8 @@
                   </div>
                 </div>
                 <div class="mb-3">
-                    <label for="descripcionproyec" class="form-label">Agregar Descripcion Del Proyecto</label>
-                    <textarea class="form-control" id="descripcionproyec" name="descripcionproyec" rows="3" formControlName="descripcionproyec" [ngClass]="{'is-invalid': Descripcion.errors && Descripcion.touched, 'is-valid': !Descripcion.errors && Descripcion.touched}"></textarea>
+                    <label for="descripcion" class="form-label">Agregar Descripcion Del Proyecto</label>
+                    <textarea class="form-control" id="descripcion" name="descripcion" rows="3" formControlName="descripcion" [ngClass]="{'is-invalid': Descripcion.errors && Descripcion.touched, 'is-valid': !Descripcion.errors && Descripcion.touched}"></textarea>
                     <div *ngIf="Descripcion.errors && Descripcion.touched">    
                       <p *ngIf="Descripcion.hasError('required')" class="text-danger">
                         La descripcion es requerida.
